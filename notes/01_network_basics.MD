@@ -1,5 +1,9 @@
 # Wireless networking basics 01
 
+## Intro
+- router is the default gateway to the internet
+- to get default gateway ip adress use `ip route` command, use this ip to get to router settings in web browser
+
 ## Change MAC adress
 Can be changed easily in sw (not hw) in command line:
 
@@ -15,7 +19,7 @@ ifconfig wlan0 up # start up the wlan0 again
 
 
 ## Change mode of operation of wireless adapter
-All the data "fly arround" the adapter can ve cofigured to capture all the data, not only the ones, that are ment for him. Types of modes:
+All the data "fly arround" the adapter so it can be cofigured to capture all the data, not only the ones, that are ment for him. Types of modes:
 - Managed: capture only data, that are ment for you
 - Monitor: capture all data
 
