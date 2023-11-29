@@ -2,7 +2,7 @@
 
 ## Intro
 - router is the default gateway to the internet
-- to get default gateway ip adress use `ip route` command, use this ip to get to router settings in web browser
+- to get default gateway ip address use `ip route` command, use this ip to get to router settings in web browser
 
 ## Change MAC adress
 Can be changed easily in sw (not hw) in command line:
