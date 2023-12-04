@@ -69,7 +69,7 @@ hstshijack/hstshijack # run caplet for https sniffing, downloaded as mentioned i
 ### DNS spoofing
 -   doesn't work against HSTS websites
 -   routing in local network can be changed as mentioned in ARP spoofing
--   same can be done for routing out of the local network, so the victim can be redirected to any attackers website
+-   same can be done for routing out of the local network, so the victim can be redirected to any attacker's website
 -   kali Linux comes with webserver, to be able to run websites
 ```bash
 service apache2 start # start webserver, it is running on same ip as the attacker machine (ifconfig)
