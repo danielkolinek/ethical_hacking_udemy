@@ -16,4 +16,4 @@
 
 ## Sandbox Trojan detection
 -   run file in sandbox service (virtual machine)
--   specific websites are created for this (like `https://www.hybrid-analysis.com/`), just upload the file and let it scan/run the file and see the report
+-   specific websites are created for this (like [https://www.hybrid-analysis.com/](https://www.hybrid-analysis.com/)), just upload the file and let it scan/run the file and see the report
