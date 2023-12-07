@@ -54,5 +54,22 @@ exploit # now if anybody opens the backdoor, it will come to this pc...
     -   when downloaded by browser. Browser will replace the right to left override character. To prevent it from happening zip the file.
 Note: In my case Chrome is able to detect the virus inside .zip. But .7z went smoothly through. But then it was stopped via windows defender. I was able to make this work only after windows defender was down. Probably well known technique by antiviruses.
 
-## Fake email
+## Fake email method 1
+-   Only works if the organization doesn't implement proper email authentication. Check if the domain can be spoofed can be done through [https://easydmarc.com/tools/dmarc-lookup](https://easydmarc.com/tools/dmarc-lookup). If there is no DMARC detected, the emails can be sent to the domain server. If DMARC is not implemented, attackers can make emails that look like it comes from the domain.
 -   There are many websites for sending spoofed emails. The problem with them is that they will usually end up in spam box.
+-   It is better to use SMTP servers. It is possible to send the malicious data via websites which are used for sending business emails like Brevo or Mailchimp. Example:
+    1)  Create account and find information regarding smtp server to be able to connect and send emails through it.
+    2)  Use `sendemail` tool. From email address should be someone who the victim knows. To address is the victims address. Include link to the trojan in the message body. Example:
+        ```bash
+        sendemail -xu email@address.com -xp passwordFromServer -s smtp.server.address.com:portNumber -f 'from.email@addres.com' -t 'to.email@address.com' -u 'subject text' -m 'message body' -o message-header="FROM: From Person <from.email@addres.com>"
+        ```
+        -   `-xu`, `-xp` and `-s` => authentication to smtp server (gathered from step 1)
+        -   `-f` => sender could be victims friend / boss / anybody he knows
+        -   `-t` => victims email
+        -  `-o message-header=` => advanced option, this example shows how to change 'FROM', so the email looks like it came from the sender (in Gmail, this is also shown)
+    3) After sent email like this, don't forget to again set the listener for incoming connection (such as Metasploit as described before)
+
+## Fake emails method 2
+-   Fake emails using PHP (requires web hosting)
+-   Setup webhosting with support of sending emails, create webpage in php for sending emails including From field which is working on same basis as the command in method 2.
+-   Again, send the email with the link and set Metasploit for listening.
