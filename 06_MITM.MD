@@ -66,7 +66,7 @@ hstshijack/hstshijack # run caplet for https sniffing, downloaded as mentioned i
 -   attack is the same as above, just the caplet should be modified to bypass the webpages. The result can be seen in the folder attachments/hstshijack
 -   for Chrome works only if Secure DNS disabled (inside chrome settings)
 
-### DNS spoofing
+#### DNS spoofing
 -   doesn't work against HSTS websites
 -   routing in local network can be changed as mentioned in ARP spoofing
 -   same can be done for routing out of the local network, so the victim can be redirected to any attacker's website
@@ -75,7 +75,7 @@ hstshijack/hstshijack # run caplet for https sniffing, downloaded as mentioned i
 service apache2 start # start webserver, it is running on same ip as the attacker machine (ifconfig)
 ```
 -   website location is `/var/www/html`
--   to run the attack, run the ARP spoofing described above and:
+-   to run the attack, run the ARP spoofing described above and add to the BetterCAP cmd:
 ```bash
 set dns.spoof.all true # spoof all DNS requests, if not
 set dns.spoof.domains test.com, *.test.com # specify which domains to spoof
@@ -83,7 +83,7 @@ dns.spoof on # start the module
 ```
 - `dns.spoof.address` is set by default to interface address
 
-### Basic JS code injection
+#### Basic JS code injection using BetterCAP
 -   it is possible to modify the response since the attacker is MITM
 -   steps to code injection
 -   works only on HTTP sites
@@ -92,7 +92,7 @@ dns.spoof on # start the module
     3)  insert the created file path inside `hstshijack` option `set hstshijack.payloads` as `*:/path/to/file.js`
     4)  run command `hstshijack/hstshijack` in bettercap
 
-### BetterCAP UI
+#### BetterCAP UI
 -   BetterCAP provides also UI. Just run the bettercap on wanted interface `bettercap -iface eth0`
 -   inside bettercap install the UI by `ui.update`
 -   run the ui by `http-ui`. No open browser with ip shown inside the cmd

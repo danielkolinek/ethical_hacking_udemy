@@ -130,15 +130,4 @@ msfconsole --resource /opt/BDFProxy/bdfproxy_msf_resource.rc # after some sessio
 sessions -l  # show available sessions
 sessions -i 1 # get inside the session no.1
 ```
-
-- now on victim machine try to download any exe file and run it 
-
-## Prevention against MITM attacks:
--   ensure you are not MITM (look on the end of MITM lecture)
-    -   use tool like xarp
-    -   use static tables
-    -   don't use untrusted or unknown networks
--   use https pages -> not possible to backdoor https packets on fly or make fake updates
--   check file's MD5 checksum after download
-    -   usually provided file has MD5 check sum. There are tools for win and linux to do the check
-    -   example for windows:  [https://www.winmd5.com/](https://www.winmd5.com/)
+- now on victim machine try to download any exe file and run it

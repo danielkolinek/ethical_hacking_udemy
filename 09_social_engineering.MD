@@ -71,5 +71,5 @@ Note: In my case Chrome is able to detect the virus inside .zip. But .7z went sm
 
 ## Fake emails method 2
 -   Fake emails using PHP (requires web hosting)
--   Setup webhosting with support of sending emails, create webpage in php for sending emails including From field which is working on same basis as the command in method 2.
+-   Setup webhosting with support of sending emails, create webpage in php for sending emails including From field which is working on same basis as the command in method 2. See example inside the attachments/mailer.php
 -   Again, send the email with the link and set Metasploit for listening.
