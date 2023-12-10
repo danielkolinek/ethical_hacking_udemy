@@ -53,7 +53,6 @@ screenshot # get screenshot
         -   set it as Bridge
         -   this is the machine that Kali will connect to through 1st Windows machine
 -   connect to the Windows 1 through the created backdoor in metasploit as previously (`session -l` and `sessions -i 1`)
--   ...
 ```bash
 ifconfig # find machines with ip addresses
 background
