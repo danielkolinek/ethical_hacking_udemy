@@ -1,6 +1,6 @@
 # SQL injection
--   To prevent SQL injection, just use parameterized statements, separate data from SQL code
--   Everything will be tested with Metasploitable Linux
+-   to prevent SQL injection, just use parameterized statements, separate data from SQL code
+-   everything was tested with Metasploitable Linux
 -   connect to the Metasploitable Linux SQL Database from Kali Linux (no hacking, only connecting): `mysql -u root -h ip.address.of.MetasploitableLinux`.
 -   to discover SQL injection vulnerability: 
     -   try to break page / test text boxes / change URL parameters

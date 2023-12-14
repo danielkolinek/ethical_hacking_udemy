@@ -74,3 +74,8 @@ weevely http://website.url/uploads_path/shell.php 123456
     -   can be set in `/etc/php5/cgi/php.ini`
     -   check that the options are set to Off
 -   Use static file inclusion (hardcoded file names)
+
+## Zed Attack Proxy (ZAP)
+-   free tool which automatically find vulnerabilities in web apps
+-   can also be used for manual testing
+-   it can test websites for methods described in this file, or `16_SQL_injection.MD`, `17_XSS_vulnerabilities.MD` and also more

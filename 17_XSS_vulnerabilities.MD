@@ -1,5 +1,6 @@
 # XSS vulnerabilities
 -   cross site scripting vulnerabilities
+-   everything was tested with Metasploitable Linux, DVWA
 -   allow attacker to inject js code => code is executed when the page loads on the client machine
 -   three main types:
     1)  persistent/stored XSS
@@ -16,3 +17,12 @@
     -   `<script>alert("XSS works")</script>`
 -   example in the URL (special characters might be better to convert to encode as described in 16_SQL_injection.MD):
     -   `url/?name=%3Cscript%3Ealert%28%22XSS works%22%29%3C%2Fscript%3E`
+
+## Stored XSS
+-   on sites, where input from user is shown, like comments to some post
+-   again put any code inside the textbox
+-   this can be used also for hooking any browser of any user, that visits the website. To generate hook, use for example BeEF as described in `10_hooking_browsers.MD`
+
+## Prevent XSS vulnerabilities
+-   minimalize the usage of user input on html
+-   escape any untrusted input before inserting it to page => convert it to html characters, so the script won't be run.
