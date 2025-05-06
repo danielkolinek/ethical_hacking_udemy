@@ -12,7 +12,7 @@ ifconfig # see the current networks, value “ether” shows the mac address
 
 ifconfig wlan0 down # shut down the wlan0, always needs to be shut for any configuration
 
-ifconfig wlan0 hw ether 00:11:22:33:44:55 # set new ip address
+ifconfig wlan0 hw ether 00:11:22:33:44:55 # set new mac address
 
 ifconfig wlan0 up # start up the wlan0 again
 ```
